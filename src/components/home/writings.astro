@@ -12,8 +12,7 @@ const feed = "https://feed.miantiao.me/";
     My Writings
   </h2>
   <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
-    Along with coding I also like to write about life and technology. Here are
-    some of my recent posts.
+    <!-- Along with coding I also like to write about life and technology. Here are some of my recent posts. -->
   </p>
 
   <div class="w-full max-w-4xl mx-auto my-7 xl:px-0">
@@ -50,19 +49,19 @@ const feed = "https://feed.miantiao.me/";
             <h2
               class="flex text-sm font-semibold text-neutral-900 dark:text-neutral-100"
             >
-              Subscribe my blog
+              Subscribe to my blog
             </h2>
           </div>
           <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
             Get my blog updates via <a
-              class="font-bold"
+              class="font-bold underline"
               href={`https://feedly.com/i/subscription/feed%2F${encodeURIComponent(feed)}`}
               >Feedly</a
             >, <a
-              class="font-bold"
+              class="font-bold underline"
               href={`https://www.inoreader.com/feed/${encodeURIComponent(feed)}`}
               >Inoreader</a
-            > or <a class="font-bold" href={feed}>RSS</a>.
+            > or <a class="font-bold underline" href={feed}>RSS</a>.
           </p>
           <div class="flex flex-col items-center w-full mt-4 space-y-3">
             <input
