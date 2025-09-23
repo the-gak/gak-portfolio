@@ -3,21 +3,36 @@
 		"dates": "April 2023 · August 2025",
 		"role": "Lead - User Education",
 		"company": "Zoho Corporation - IAM ONE",
-		"description": "Responsible for hiring and managing a User Education team of 16 technical writers, working on seven products.",
-		"logo": "/assets/images/experiences/fta.ico"
+		"description": "Responsible for recruiting, training, and managing a team of 16 technical writers and five products.",
+		"logo": { "src" : "/assets/images/experiences/zoho-logo-512.png", "alt": "Zoho" },
+		"productLogos": [
+			{ "src": "/assets/images/experiences/zoho-directory.png", "alt": "Zoho Directory", "title": "Zoho Directory" },
+			{ "src": "/assets/images/experiences/zoho-one.png", "alt": "Zoho One", "title": "Zoho One" },
+			{ "src": "/assets/images/experiences/zoho-oneauth.png", "alt": "Zoho OneAuth", "title": "Zoho OneAuth" },
+			{ "src": "/assets/images/experiences/zoho-accounts.ico", "alt": "Zoho Accounts", "title": "Zoho Accounts" },
+			{ "src": "/assets/images/experiences/zoho-contacts.ico", "alt": "Zoho Contacts", "title": "Zoho Contacts" }
+		]
 	},
 	{
 		"dates": "August 2018 · April 2023",
 		"role": "Technical Writer",
 		"company": "Zoho Corporation - IAM ONE",
-		"description": "Responsible for writing UX content and product documentation for seven products.",
-		"logo": "/assets/images/experiences/yoho.ico"
+		"description": "Responsible for writing UX content and product documentation for six products.",
+		"logo": { "src" : "/assets/images/experiences/zoho-logo-512.png", "alt": "Zoho" },
+		"productLogos": [
+			{ "src": "/assets/images/experiences/zoho-directory.png", "alt": "Zoho Directory", "title": "Zoho Directory" },
+			{ "src": "/assets/images/experiences/zoho-one.png", "alt": "Zoho One", "title": "Zoho One" },
+			{ "src": "/assets/images/experiences/zoho-oneauth.png", "alt": "Zoho OneAuth", "title": "Zoho OneAuth" },
+			{ "src": "/assets/images/experiences/zoho-accounts.ico", "alt": "Zoho Accounts", "title": "Zoho Accounts" },
+			{ "src": "/assets/images/experiences/zoho-contacts.ico", "alt": "Zoho Contacts", "title": "Zoho Contacts" },
+			{ "src": "/assets/images/experiences/zoho-remotely.png", "alt": "Zoho Remotely", "title": "Zoho Remotely" }
+		]
 	},
 	{
 		"dates": "July 2018 · August 2018",
 		"role": "Freelance Web Developer",
 		"company": "Paradigm International",
 		"description": "Responsible for writing and developing a website in WordPress.",
-		"logo": "/assets/images/experiences/wulian.ico"
+		"logo": { "src" : "/assets/images/experiences/p-logo.png", "alt": "Paradigm" }
 	}
 ]
