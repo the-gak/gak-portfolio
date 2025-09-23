@@ -4,5 +4,11 @@
 		"description": "Documentation for Creamie, an open-source JavaScript framework built under web-components.",
 		"image": "../assets/images/projects/creamie-documentation.png",
 		"url": "https://creamie.vercel.app/docs/webcomponents"
+	},
+	{
+		"name": "Paradigm International - Website",
+		"description": "Website of a textile manufacturer, hosted in WordPress.",
+		"image": "../assets/images/projects/paradigm-website.png",
+		"url": "https://paradigmtex.com/"
 	}
 ]
