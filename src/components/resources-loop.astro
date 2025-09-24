@@ -9,14 +9,17 @@ function parseDate(dateStr) {
   return new Date(`${month} ${parseInt(day)}, ${year}`);
 }
 
-const sortedResources = allResources
+const categories = allResources.filter((entry) => entry.id.endsWith("category.md"));
+// console.log(categories);
+
+const sortedCategories = categories
   .map((resource) => ({
     ...resource,
-    date: parseDate(resource.data.dateFormatted),
+    date: parseDate(resource.data.updated),
   }))
   .sort((a, b) => b.date.getTime() - a.date.getTime());
 
-const resourcesLoop = sortedResources.slice(0, count).map((resource) => {
+const resourcesLoop = sortedCategories.slice(0, count).map((resource) => {
   return {
     ...(resource.data || {}),
     link: `/resources/${resource.data.resourceSlug}`,
@@ -85,7 +88,7 @@ const resourcesLoop = sortedResources.slice(0, count).map((resource) => {
             <span>{resource.description}</span>
           </p>
           <div class="mt-2.5 text-xs font-medium text-neutral-800 dark:text-neutral-300">
-            Posted on {resource.dateFormatted}
+            Posted on {resource.updated}
           </div>
         </div>
       </div>

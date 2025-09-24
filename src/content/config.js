@@ -14,8 +14,9 @@ const resourcesCollection = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
-		dateFormatted: z.string(),
+		updated: z.string(),
 		resourceSlug: z.string(),
+		image: z.string().optional()
 	}),
 });
 

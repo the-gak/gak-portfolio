@@ -1,10 +1,13 @@
 ---
 import { getCollection } from "astro:content";
 
+
+
+
 export async function getStaticPaths() {
 	const resourceEntries = await getCollection("resources");
 	return resourceEntries.map((entry) => ({
-		params: { resourceSlug: entry.data.resourceSlug },
+		params: { resourceSlug: entry.data.resourceSlug, category: entry.slug.split("/")[0] },
 		props: { entry },
 	}));
 }
