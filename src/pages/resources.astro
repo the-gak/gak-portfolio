@@ -1,0 +1,18 @@
+---
+import PageHeading from "../components/page-heading.astro";
+import ResourcesLoop from "../components/resources-loop.astro";
+import Layout from "../layouts/main.astro";
+---
+
+<Layout title="Resources | Ahilesh Kumar - Technical Writer" metaDescription="Take a look at my documentation projects.">
+  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+    <PageHeading
+      title="My Resources"
+      GAK-DISABLED-description="Take a look at my documentation projects."
+    />
+
+    <div class="z-50 flex flex-col items-stretch w-full gap-5 my-8">
+      <ResourcesLoop count="999999999" />
+    </div>
+  </section>
+</Layout>
