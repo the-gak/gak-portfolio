@@ -16,7 +16,8 @@ const resourcesCollection = defineCollection({
 		description: z.string(),
 		updated: z.string(),
 		resourceSlug: z.string(),
-		image: z.string().optional()
+		image: z.string().optional(),
+		articles: z.array(z.string()).optional(),
 	}),
 });
 

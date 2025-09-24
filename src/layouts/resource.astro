@@ -1,0 +1,37 @@
+---
+import Layout from "./main.astro";
+const { frontmatter, toc, category } = Astro.props;
+---
+
+
+
+<Layout title={frontmatter.title}>
+  <main>
+    <div class="flex flex-col md:flex-row">
+  <div class="flex-1 px-6 md:px-12 lg:px-24 max-w-3xl mx-auto mt-16 md:mt-24">
+        <h1 class="text-3xl font-bold leading-tight tracking-tighter text-left md:mb-12 md:text-4xl dark:text-neutral-100 lg:text-5xl md:leading-none">
+          {frontmatter.title}
+        </h1>
+        <article class="prose-sm prose dark:prose-invert prose-a:text-indigo-600">
+          <slot />
+        </article>
+      </div>
+        <aside class="w-full md:w-64 md:pl-4 mt-16 md:mt-24 md:ml-0 md:absolute md:right-16">
+        {toc && toc.length > 0 && (
+          <nav class="fixed top-42">
+            <h2 class="text-lg font-semibold mb-3">Table of Contents</h2>
+            <ul class="space-y-2 text-sm">
+              {toc.map((item) => (
+                <li>
+                  <a href={`/resources/${category}/${item.slug}`} class="text-indigo-600 hover:underline">
+                    {item.title ?? item.slug}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+      </aside>
+    </div>
+  </main>
+</Layout>

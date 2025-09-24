@@ -1,19 +1,60 @@
 ---
+import ResourceLayout from "../../../layouts/resource.astro";
 import { getCollection } from "astro:content";
 
-
-
-
 export async function getStaticPaths() {
-	const resourceEntries = await getCollection("resources");
-	return resourceEntries.map((entry) => ({
-		params: { resourceSlug: entry.data.resourceSlug, category: entry.slug.split("/")[0] },
-		props: { entry },
-	}));
+  const allResources = await getCollection("resources");
+  // Find all resources with a category and resourceSlug
+  return allResources
+    .filter((e) => {
+      const parts = e.slug.split("/");
+      return parts.length === 2; // e.g., "category/resourceSlug"
+    })
+    .map((e) => {
+      const [category, resourceSlug] = e.slug.split("/");
+      return {
+        params: { category, resourceSlug },
+        props: {},
+      };
+    });
+}
+const { category, resourceSlug } = Astro.params;
+const allResources = await getCollection("resources");
+
+// Find the resource entry
+const resourceEntry = allResources.find(
+  (e) => e.slug === `${category}/${resourceSlug}`
+);
+if (!resourceEntry) {
+  throw new Error(`Resource not found: ${category}/${resourceSlug}`);
 }
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+// Find the category metadata entry
+const categoryMetaEntry = allResources.find(
+  (e) => e.slug === `${category}/category`
+);
+
+// Generate TOC from category frontmatter (articles array)
+let toc = [];
+if (categoryMetaEntry && Array.isArray(categoryMetaEntry.data.articles)) {
+  toc = categoryMetaEntry.data.articles
+    .map((slug) => {
+      const entry = allResources.find(
+        (e) => e.slug === `${category}/${slug}`
+      );
+      return entry
+        ? { slug, title: entry.data.title || slug }
+        : null;
+    })
+    .filter(Boolean);
+}
+
+console.log("TOC array:", toc);
+
+const { Content } = await resourceEntry.render();
+const frontmatter = resourceEntry.data;
 ---
 
-<Content />
+<ResourceLayout frontmatter={frontmatter} toc={toc} category={category}>
+  <Content />
+</ResourceLayout>

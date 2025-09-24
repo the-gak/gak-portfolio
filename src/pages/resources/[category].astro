@@ -33,15 +33,23 @@ let resourcesForCategory = allResources.filter(
   (e) => e.slug.startsWith(`${categorySlug}/`) && !e.slug.endsWith("/category")
 );
 
-// normalize and sort by `updated` frontmatter (newest first). If `updated` absent, fallback to 0
-resourcesForCategory = resourcesForCategory
-  .map((entry) => {
-    const updatedVal = entry.data?.updated ?? entry.data?.updated ?? null;
-    const parsed = updatedVal ? Date.parse(String(updatedVal)) : 0;
-    return { entry, updatedTs: Number.isFinite(parsed) ? parsed : 0 };
-  })
-  .sort((a, b) => b.updatedTs - a.updatedTs)
-  .map((x) => x.entry);
+// If categoryMetaEntry has an articles array, use it for ordering
+if (categoryMetaEntry?.data?.articles) {
+  // Order resources according to the articles array in frontmatter
+  resourcesForCategory = categoryMetaEntry.data.articles
+    .map((slug) => resourcesForCategory.find((res) => res.slug.endsWith(`/${slug}`)))
+    .filter(Boolean); // Remove any not found
+} else {
+  // Fallback: sort by updated date
+  resourcesForCategory = resourcesForCategory
+    .map((entry) => {
+      const updatedVal = entry.data?.updated ?? null;
+      const parsed = updatedVal ? Date.parse(String(updatedVal)) : 0;
+      return { entry, updatedTs: Number.isFinite(parsed) ? parsed : 0 };
+    })
+    .sort((a, b) => b.updatedTs - a.updatedTs)
+    .map((x) => x.entry);
+}
 
 // If the category folder is empty (no resources & no category md), return 404
 if (!categoryMetaEntry && resourcesForCategory.length === 0) {
