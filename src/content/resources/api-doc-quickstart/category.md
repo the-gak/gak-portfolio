@@ -6,5 +6,6 @@ resourceSlug: "api-doc-quickstart"
 articles:
     - "intro"
     - "http-methods"
+    - "params"
 ---
 Content goes here.
