@@ -7,5 +7,7 @@ articles:
     - "intro"
     - "http-methods"
     - "params"
+    - "authentication-authorization"
+    - "oauth"
 ---
 Content goes here.
