@@ -42,6 +42,8 @@ Let's break down how this worked.
 2. The endpoint knows what to do when it is contacted, so it asked the server to process your request.
 3. The server processed your request and sent you a response containing the programming joke you requested.
 
-That is all there is to an API--you send a request, and you receive a response. You might have noticed a dropdown with the option `GET` selected in the website you just used. That is one of the many HTTP methods you can use to make API requests.
+That is all there is to an API--you send a request, and you receive a response.
+
+Most of the apps you use run on APIs. When you click on a product listing page in Amazon, your browser or mobile app sends an API request to Amazon's servers, gets the response, and displays the result to you. When you click on an email in Gmail, your browser sends an API response to Google's servers. When you post a picture in Instagram, your app sends an API request to Instagram's servers and has the picture uploaded.
 
 In the next section, we'll learn about the different types of HTTP methods you can use.
