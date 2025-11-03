@@ -6,7 +6,7 @@ resourceSlug: "params"
 ---
 Often API calls require more context. Let's say you're making a post call to an endpoint.
 
-```
+```http
 POST https://api.casualtechster.com/subscribers
 ```
 
@@ -14,14 +14,13 @@ This would let you add a subscriber to the blog `casualtechster.com`. Practicall
 
 Params can help provide that context. In this example, the params can be added at the end of the request, like this:
 
-```
+```http
 POST https://api.casualtechster.com/subscribers?name=Ahilesh&email=owner@casualtechster.com&emailConset=true
-
 ```
 
 Similarly, a GET request for the response would have params like filters to retrieve specific subscribers. For example:
 
-```
+```http
 GET https://api.casualtechster.com/subscribers?name=Ahilesh
 ```
 

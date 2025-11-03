@@ -10,11 +10,14 @@ Let's start with a small example:
 
 1. Go to <https://reqbin.com>.
 2. Paste this in the main input box:
-    ```
+
+    ```text
     https://v2.jokeapi.dev/joke/Programming
     ```
+
 3. Click **Send**.
 4. Scroll down a bit, and you'll find a response containing a joke.
+
     ```json
     {
     "error": false,

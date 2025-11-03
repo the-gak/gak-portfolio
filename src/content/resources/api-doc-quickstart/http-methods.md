@@ -8,7 +8,7 @@ In our previous example, we used a GET call to retrieve information. But a singl
 
 This is where HTTP methods come in. Let's take a look at some of them with an example. Consider this sample endpoint:
 
-```
+```text
 https://api.casualtechster.com/subscribers
 ```
 

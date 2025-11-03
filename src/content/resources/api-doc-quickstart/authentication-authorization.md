@@ -6,13 +6,13 @@ resourceSlug: "authentication-authorization"
 ---
 Let's consider our GET call example:
 
-```
+```text
 GET https://api.casualtechster.com/subscribers
 ```
 
 Information returned by this call, like a subscriber's name or email address, should not be accessible the public. Only the blog's owners should be able to get the information of their subscribers.
 
-Let's say only the admins of `https://casualtechster.com` can use the Get Subscribers API, and that ahilesh@casualtechster.com is an admin. The server will first need to validate if the client sending the request is sending it on behalf of ahilesh@casualtechster.com. Upon success, it will have to validate if the specific user is an admin.
+Let's say only the admins of `https://casualtechster.com` can use the Get Subscribers API, and that `ahilesh@casualtechster.com` is an admin. The server will first need to validate if the client sending the request is sending it on behalf of `ahilesh@casualtechster.com`. Upon success, it will have to validate if the specific user is an admin.
 
 ### Authentication
 
